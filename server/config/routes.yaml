@@ -1,0 +1,7 @@
+home:
+    path: /
+    controller: App\Controller\BsmsController::index
+
+sms:
+    path: /sms
+    controller: App\Controller\BsmsController::sms

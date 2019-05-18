@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Bsms Application{% endblock %}</title>
+    </head>
+
+        {% block stylesheets %}
+	{#
+	<link href="{{ asset('bootstrap.min.css') }}" rel="stylesheet"/>
+	#}
+	{% endblock %}
+
+    <body>
+        <div id="sidebar">
+            {% block sidebar %}
+            {% endblock %}
+        </div>
+
+        <div id="content">
+	    <div id="app"></div>
+	
+            {% block body %}{% endblock %}
+        </div>
+        
+        {% block javascripts %}
+            <script> window.App = {{ app|json_encode|raw }}; </script>
+            <script src="{{ asset('bundle.js') }}"></script>
+        {% endblock %}
+ 
+    </body>
+</html>
